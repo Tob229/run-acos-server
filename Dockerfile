@@ -7,7 +7,8 @@ RUN mkdir /var/log/acos \
 WORKDIR /usr/src/acos-server
 
 # install acos-server itself
-RUN git clone https://github.com/acos-server/acos-server.git . \
+# RUN git clone https://github.com/acos-server/acos-server.git . \
+RUN git clone https://github.com/Tob229/acos-server.git . \
   && (echo "On branch $(git rev-parse --abbrev-ref HEAD)"; echo; git log -n5) > GIT \
   && rm -rf .git \
   && rm -f package-lock.json

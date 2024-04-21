@@ -1,0 +1,11 @@
+#!/bin/sh
+
+docker run --privileged --rm tonistiigi/binfmt --install all
+
+docker buildx create --use default
+
+docker buildx build \
+--push \
+--tag "levide229/run-aplus-acos":"1.0.3" \
+--platform linux/amd64 .
+# --platform linux/amd64,linux/arm64 .
